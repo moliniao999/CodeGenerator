@@ -8,7 +8,7 @@ import com.codegen.service.CodeGeneratorManager;
  */
 public class CodeGeneratorMain {
 	
-	private static final String TABLE = "gen_test_demo";
+	private static final String TABLE = "adjust_price_apply";
 	
 	private static final String MODEL_NAME = "ITest";
 	
@@ -31,9 +31,9 @@ public class CodeGeneratorMain {
 	public static void main(String[] args) {
 		CodeGeneratorManager cgm = new CodeGeneratorManager();
 		
-		cgm.genCodeWithSimpleName(TABLE);
-		
-//		cgm.genCodeWithDetailName(TABLES);
+//		cgm.genCodeWithSimpleName(TABLE);
+
+ 		cgm.genCodeWithDetailName(TABLE);
 		
 //		cgm.genCodeWithCustomName(TABLE, MODEL_NAME);
 	}
