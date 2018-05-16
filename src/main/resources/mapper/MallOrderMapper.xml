@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.pohoocredit.profitcard.mall.order.dao.MallOrderMapper">
+  <resultMap id="BaseResultMap" type="com.pohoocredit.profitcard.mall.order.model.MallOrder">
+    <!--
+      WARNING - @mbg.generated
+    -->
+    <id column="order_id" jdbcType="BIGINT" property="orderId" />
+    <result column="cust_id" jdbcType="VARCHAR" property="custId" />
+    <result column="purchase_total_amount" jdbcType="DECIMAL" property="purchaseTotalAmount" />
+    <result column="financial_product_id" jdbcType="VARCHAR" property="financialProductId" />
+    <result column="financial_product_name" jdbcType="VARCHAR" property="financialProductName" />
+    <result column="periods" jdbcType="TINYINT" property="periods" />
+    <result column="installment_amount" jdbcType="DECIMAL" property="installmentAmount" />
+    <result column="pay_total_amount" jdbcType="DECIMAL" property="payTotalAmount" />
+    <result column="commodity_total_amount" jdbcType="DECIMAL" property="commodityTotalAmount" />
+    <result column="quantity" jdbcType="TINYINT" property="quantity" />
+    <result column="discount_amount" jdbcType="DECIMAL" property="discountAmount" />
+    <result column="buyer_name" jdbcType="VARCHAR" property="buyerName" />
+    <result column="buyer_phone" jdbcType="VARCHAR" property="buyerPhone" />
+    <result column="order_status" jdbcType="VARCHAR" property="orderStatus" />
+    <result column="order_main_status" jdbcType="VARCHAR" property="orderMainStatus" />
+    <result column="status_desc" jdbcType="VARCHAR" property="statusDesc" />
+    <result column="freight_pay_tpye" jdbcType="VARCHAR" property="freightPayTpye" />
+    <result column="freight_total_amount" jdbcType="DECIMAL" property="freightTotalAmount" />
+    <result column="supplier" jdbcType="INTEGER" property="supplier" />
+    <result column="supplier_order_num" jdbcType="VARCHAR" property="supplierOrderNum" />
+    <result column="supplier_pay_type" jdbcType="TINYINT" property="supplierPayType" />
+    <result column="supplier_pay_time" jdbcType="VARCHAR" property="supplierPayTime" />
+    <result column="addressee_receipt_time" jdbcType="VARCHAR" property="addresseeReceiptTime" />
+    <result column="delivery_type" jdbcType="TINYINT" property="deliveryType" />
+    <result column="client_display" jdbcType="TINYINT" property="clientDisplay" />
+    <result column="loan_no" jdbcType="VARCHAR" property="loanNo" />
+    <result column="create_time" jdbcType="TIMESTAMP" property="createTime" />
+    <result column="update_time" jdbcType="TIMESTAMP" property="updateTime" />
+    <result column="trade_points_amount" jdbcType="DECIMAL" property="tradePointsAmount" />
+    <result column="pay_type" jdbcType="TINYINT" property="payType" />
+    <result column="pay_created_time" jdbcType="TIMESTAMP" property="payCreatedTime" />
+    <result column="pay_finished_time" jdbcType="TIMESTAMP" property="payFinishedTime" />
+    <result column="trade_points_status" jdbcType="TINYINT" property="tradePointsStatus" />
+  </resultMap>
+</mapper>
