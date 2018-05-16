@@ -1,16 +1,17 @@
-package ${basePackage}.service.impl.${sign};
+package ${basePackage}.service.impl;
 
-import ${basePackage}.dao.mapper.${sign}.${modelNameUpperCamel}Mapper;
-import ${basePackage}.model.${sign}.${modelNameUpperCamel};
-import ${basePackage}.service.${sign}.${modelNameUpperCamel}Service;
+import ${basePackage}.dao.${modelNameUpperCamel}Mapper;
+import ${basePackage}.model.${modelNameUpperCamel};
+import ${basePackage}.service.${modelNameUpperCamel}Service;
 import ${basePackage}.service.AbstractService;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
 /**
- *
- * Created by ${author} on ${date}.
- */
+* @description:
+* @author: ${author}
+* @create: ${date}
+*/
 @Service
 public class ${modelNameUpperCamel}ServiceImpl extends AbstractService<${modelNameUpperCamel}> implements ${modelNameUpperCamel}Service {
 

@@ -1,16 +1,15 @@
 package com.codegen.service.impl;
 
-import java.io.File;
-import java.io.FileWriter;
-import java.util.HashMap;
-import java.util.Map;
-
 import com.codegen.service.CodeGenerator;
 import com.codegen.service.CodeGeneratorManager;
 import com.codegen.util.StringUtils;
 import com.google.common.base.CaseFormat;
-
 import freemarker.template.Configuration;
+
+import java.io.File;
+import java.io.FileWriter;
+import java.util.HashMap;
+import java.util.Map;
 /**
  * Controller层 代码生成器
  * Created by zhh on 2017/09/20.
@@ -20,7 +19,7 @@ public class ControllerGenerator extends CodeGeneratorManager implements CodeGen
 	@Override
 	public void genCode(String tableName, String modelName, String sign) {
 		Configuration cfg = getFreemarkerConfiguration();
-		String customMapping = "/" + sign + "/";
+		String customMapping = "/";
 		String modelNameUpperCamel = StringUtils.isNullOrEmpty(modelName) ? tableNameConvertUpperCamel(tableName) : modelName;
 		
 		Map<String, Object> data = getDataMapInit(tableName, modelName, sign, modelNameUpperCamel); 
@@ -49,7 +48,7 @@ public class ControllerGenerator extends CodeGeneratorManager implements CodeGen
 		Map<String, Object> data = new HashMap<>();
 		data.put("date", DATE);
         data.put("author", AUTHOR);
-        data.put("sign", sign);
+        //data.put("sign", sign);
         data.put("baseRequestMapping", StringUtils.toLowerCaseFirstOne(modelNameUpperCamel));
         data.put("modelNameUpperCamel", modelNameUpperCamel);
         data.put("modelNameLowerCamel", CaseFormat.UPPER_CAMEL.to(CaseFormat.LOWER_CAMEL, modelNameUpperCamel));

@@ -1,29 +1,22 @@
 package com.codegen.service;
 
+import com.codegen.service.impl.ControllerGenerator;
+import com.codegen.service.impl.ModelAndMapperGenerator;
+import com.codegen.service.impl.ServiceGenerator;
+import com.codegen.util.StringUtils;
+import com.google.common.base.CaseFormat;
+import freemarker.template.Configuration;
+import freemarker.template.TemplateExceptionHandler;
+import org.mybatis.generator.config.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+
 import java.io.File;
 import java.io.IOException;
 import java.io.InputStream;
 import java.text.SimpleDateFormat;
 import java.util.Date;
 import java.util.Properties;
-
-import org.mybatis.generator.config.Context;
-import org.mybatis.generator.config.JDBCConnectionConfiguration;
-import org.mybatis.generator.config.ModelType;
-import org.mybatis.generator.config.PluginConfiguration;
-import org.mybatis.generator.config.PropertyRegistry;
-import org.mybatis.generator.config.SqlMapGeneratorConfiguration;
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-import com.codegen.service.impl.ControllerGenerator;
-import com.codegen.service.impl.ModelAndMapperGenerator;
-import com.codegen.service.impl.ServiceGenerator;
-import com.codegen.util.StringUtils;
-import com.google.common.base.CaseFormat;
-
-import freemarker.template.Configuration;
-import freemarker.template.TemplateExceptionHandler;
 
 /**
  * 代码生成器基础项 (常量信息 & 通用方法)
@@ -71,7 +64,7 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
         
         SqlMapGeneratorConfiguration sqlMapGeneratorConfiguration = new SqlMapGeneratorConfiguration();
         sqlMapGeneratorConfiguration.setTargetProject(PROJECT_PATH + RESOURCES_PATH);
-        sqlMapGeneratorConfiguration.setTargetPackage("mapper." + sign);
+        sqlMapGeneratorConfiguration.setTargetPackage("mapper");
         context.setSqlMapGeneratorConfiguration(sqlMapGeneratorConfiguration);
         
         // 增加 mapper 插件
@@ -182,7 +175,7 @@ public class CodeGeneratorManager extends CodeGeneratorConfig {
 	 */
 	private String[] getTableNameSplit(String tableName) {
 		String[] strs = tableName.split("_");
-		if (!tableName.contains("_") || strs.length < 3) {
+		if (!tableName.contains("_")) {
 			throw new RuntimeException("表名格式不正确, 请按规定格式! 例如: gen_test_demo");
 		}
 		return strs;

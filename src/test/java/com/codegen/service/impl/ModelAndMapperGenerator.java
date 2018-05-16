@@ -1,20 +1,14 @@
 package com.codegen.service.impl;
 
-import java.util.ArrayList;
-import java.util.List;
-
-import org.mybatis.generator.api.MyBatisGenerator;
-import org.mybatis.generator.config.Configuration;
-import org.mybatis.generator.config.Context;
-import org.mybatis.generator.config.GeneratedKey;
-import org.mybatis.generator.config.JavaClientGeneratorConfiguration;
-import org.mybatis.generator.config.JavaModelGeneratorConfiguration;
-import org.mybatis.generator.config.TableConfiguration;
-import org.mybatis.generator.internal.DefaultShellCallback;
-
 import com.codegen.service.CodeGenerator;
 import com.codegen.service.CodeGeneratorManager;
 import com.codegen.util.StringUtils;
+import org.mybatis.generator.api.MyBatisGenerator;
+import org.mybatis.generator.config.*;
+import org.mybatis.generator.internal.DefaultShellCallback;
+
+import java.util.ArrayList;
+import java.util.List;
 
 /**
  * Model & Mapper 代码生成器
@@ -65,12 +59,12 @@ public class ModelAndMapperGenerator extends CodeGeneratorManager implements Cod
 			context = initMybatisGeneratorContext(sign);
 			JavaModelGeneratorConfiguration javaModelGeneratorConfiguration = new JavaModelGeneratorConfiguration();
 	        javaModelGeneratorConfiguration.setTargetProject(PROJECT_PATH + JAVA_PATH);
-	        javaModelGeneratorConfiguration.setTargetPackage(MODEL_PACKAGE + "." + sign);
+	        javaModelGeneratorConfiguration.setTargetPackage(MODEL_PACKAGE );
 	        context.setJavaModelGeneratorConfiguration(javaModelGeneratorConfiguration);
 	        
 	        JavaClientGeneratorConfiguration javaClientGeneratorConfiguration = new JavaClientGeneratorConfiguration();
 	        javaClientGeneratorConfiguration.setTargetProject(PROJECT_PATH + JAVA_PATH);
-	        javaClientGeneratorConfiguration.setTargetPackage(MAPPER_PACKAGE + "." + sign);
+	        javaClientGeneratorConfiguration.setTargetPackage(MAPPER_PACKAGE );
 	        javaClientGeneratorConfiguration.setConfigurationType("XMLMAPPER");
 	        context.setJavaClientGeneratorConfiguration(javaClientGeneratorConfiguration);
 	        

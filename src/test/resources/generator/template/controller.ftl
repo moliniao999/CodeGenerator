@@ -1,6 +1,6 @@
-package ${basePackage}.web.controller.${sign};
-import ${basePackage}.model.${sign}.${modelNameUpperCamel};
-import ${basePackage}.service.${sign}.${modelNameUpperCamel}Service;
+package ${basePackage}.controller;
+import ${basePackage}.model.${modelNameUpperCamel};
+import ${basePackage}.service.${modelNameUpperCamel}Service;
 import com.github.pagehelper.PageHelper;
 import com.github.pagehelper.PageInfo;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -11,10 +11,13 @@ import org.springframework.web.bind.annotation.ResponseBody;
 
 import java.util.List;
 
+
 /**
- *
- * Created by ${author} on ${date}.
- */
+* @description:
+* @author: ${author}
+* @create: ${date}
+*/
+
 @Controller
 @RequestMapping("/${baseRequestMapping}/")
 public class ${modelNameUpperCamel}Controller {
