@@ -17,44 +17,39 @@ import java.util.List;
 * @author: ${author}
 * @create: ${date}
 */
-
-@Controller
+@RestController
 @RequestMapping("/${baseRequestMapping}/")
+@Slf4j
 public class ${modelNameUpperCamel}Controller {
 
     @Autowired
     ${modelNameUpperCamel}Service ${modelNameLowerCamel}Service;
 
-    @RequestMapping("add")
-    @ResponseBody
+    @PostMapping("add")
     public String add(${modelNameUpperCamel} ${modelNameLowerCamel}) {
         ${modelNameLowerCamel}Service.save(${modelNameLowerCamel});
         return "";
     }
 
-    @RequestMapping("delete")
-    @ResponseBody
+    @GetMapping("delete")
     public String delete(@RequestParam Integer id) {
 	    ${modelNameLowerCamel}Service.deleteById(id);
 	    return "";
     }
 
-    @RequestMapping("update")
-    @ResponseBody
+    @PostMapping("update")
     public String update(${modelNameUpperCamel} ${modelNameLowerCamel}) {
 	    ${modelNameLowerCamel}Service.update(${modelNameLowerCamel});
 	    return "";
     }
 
-    @RequestMapping("detail")
-    @ResponseBody
+    @GetMapping("detail")
     public String detail(@RequestParam Integer id) {
         ${modelNameUpperCamel} ${modelNameLowerCamel} = ${modelNameLowerCamel}Service.findById(id);
         return ${modelNameLowerCamel}.toString();
     }
 
-    @RequestMapping("list")
-    @ResponseBody
+    @GetMapping("list")
     public String list(@RequestParam(defaultValue = "0") Integer page, @RequestParam(defaultValue = "0") Integer size) {
         PageHelper.startPage(page, size);
         List<${modelNameUpperCamel}> list = ${modelNameLowerCamel}Service.findAll();

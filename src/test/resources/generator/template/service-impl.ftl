@@ -13,6 +13,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 * @create: ${date}
 */
 @Service
+@Slf4j
 public class ${modelNameUpperCamel}ServiceImpl extends AbstractService<${modelNameUpperCamel}> implements ${modelNameUpperCamel}Service {
 
     @Autowired
