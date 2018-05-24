@@ -83,5 +83,12 @@
 		<artifactId>spring-boot-starter-web</artifactId>
 		<version>1.5.4.RELEASE</version>
 	</dependency>
+	  <!--lombok start-->
+	  <dependency>
+		  <groupId>org.projectlombok</groupId>
+		  <artifactId>lombok</artifactId>
+		  <version>1.16.18</version>
+	  </dependency>
+	  <!--lombok end-->
   </dependencies>
 </project>

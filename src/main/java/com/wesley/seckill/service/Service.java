@@ -1,4 +1,4 @@
-package com.pohoocredit.profitcard.mall.order.service;
+package com.wesley.seckill.service;
 
 import org.apache.ibatis.exceptions.TooManyResultsException;
 import tk.mybatis.mapper.entity.Condition;

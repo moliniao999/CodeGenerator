@@ -6,6 +6,7 @@ import ${basePackage}.service.${modelNameUpperCamel}Service;
 import ${basePackage}.service.AbstractService;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
+import lombok.extern.slf4j.Slf4j;
 
 /**
 * @description:
